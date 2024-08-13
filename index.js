@@ -1,17 +1,35 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+  
+  for (const number of array) {
+    const total = target - number;
+
+    if (seenNumbers[total] !== undefined) {
+      return true;
+    } 
+
+    seenNumbers[number] = true;
+    }
+
+  return false;
+
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
-  Add your pseudocode here
+  Create an object to store seen numbers
+  if the total is in seenNumbers, return true
+  otherwise, store the number in the object
+  If no pair is found, return false
+
 */
 
 /*
-  Add written explanation of your solution here
+  A function designed to show if a pair of numbers in an array adds up to
+  a target number
 */
 
 // You can run `node index.js` to view these console logs
